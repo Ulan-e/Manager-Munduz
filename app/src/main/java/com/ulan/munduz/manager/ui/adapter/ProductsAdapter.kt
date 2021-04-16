@@ -6,44 +6,34 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import com.ulan.app.munduz.helpers.convertLongToTime
+import com.ulan.munduz.manager.helpers.convertLongToTime
 import com.ulan.app.munduz.ui.Product
 import com.ulan.munduz.manager.R
 import com.ulan.munduz.manager.listeners.OnItemClickListener
 import javax.inject.Inject
 
-class ProductsAdapter: RecyclerView.Adapter<ProductsHolder>, Filterable {
+class ProductsAdapter @Inject constructor(
+    private val context: Context,
+    listener: OnItemClickListener
+) : RecyclerView.Adapter<ProductsHolder>(), Filterable {
 
-    private var context: Context?
-    private val onItemClickListener: OnItemClickListener?
+    private val onItemClickListener: OnItemClickListener? = listener
 
     private lateinit var products: ArrayList<Product>
     private lateinit var filteredProducts: ArrayList<Product>
 
-    @Inject
-    constructor(context: Context, listener: OnItemClickListener){
-        this.context = context
-        this.onItemClickListener = listener
-    }
-
-    fun setProducts(products: ArrayList<Product>){
-        this.products = products
-        this.filteredProducts = products
-        this.filteredProducts.distinct()
-    }
-    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : ProductsHolder {
-        var inflater: LayoutInflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        var view = inflater.inflate(R.layout.products_items, parent, false)
+        val inflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val view = inflater.inflate(R.layout.products_items, parent, false)
         return ProductsHolder(view)
     }
 
     override fun onBindViewHolder(holder: ProductsHolder, position: Int) {
-        var product: Product? = filteredProducts.get(position)
+        val product: Product? = filteredProducts.get(position)
         holder.bind(product, onItemClickListener)
-        holder.item_name.text = product!!.name
-        holder.item_category.text = product!!.category
-        holder.item_cost.text = product.date.convertLongToTime(product!!.date)
+        holder.itemName.text = product!!.name
+        holder.itemCategory.text = product!!.category
+        holder.itemCost.text = product.date.convertLongToTime(product!!.date)
     }
 
     override fun getItemCount(): Int {
@@ -78,5 +68,11 @@ class ProductsAdapter: RecyclerView.Adapter<ProductsHolder>, Filterable {
                 notifyDataSetChanged()
             }
         }
+    }
+
+    fun setProducts(products: ArrayList<Product>){
+        this.products = products
+        this.filteredProducts = products
+        this.filteredProducts.distinct()
     }
 }

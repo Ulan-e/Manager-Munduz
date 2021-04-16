@@ -6,8 +6,8 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import com.ulan.app.munduz.data.models.Picture
-import com.ulan.app.munduz.helpers.Constants.Companion.PICK_IMAGE_REQUEST
+import com.ulan.munduz.manager.data.models.Picture
+import com.ulan.munduz.manager.helpers.Constants.Companion.PICK_IMAGE_REQUEST
 import com.ulan.app.munduz.helpers.showEditTextEmpty
 import com.ulan.app.munduz.helpers.showEmptyDrawable
 import com.ulan.app.munduz.helpers.showSuccessProductAdded
@@ -73,7 +73,7 @@ class AddProductActivity : BaseActivity(),
     }
 
     override fun getInputProduct(): Product {
-        var product = Product()
+        val product = Product()
         product.date = System.currentTimeMillis()
         product.category = product_category.selectedItem.toString()
         product.isVisible = true

@@ -47,5 +47,4 @@ abstract class ActivityBuildersModule {
     @SliderScope
     @ContributesAndroidInjector(modules = [SliderModule::class])
     abstract fun sliderActivity(): AddSliderActivity
-
 }

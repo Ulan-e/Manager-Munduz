@@ -7,30 +7,25 @@ import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
-import com.ulan.app.munduz.data.models.Picture
+import com.ulan.munduz.manager.data.models.Picture
 import com.ulan.app.munduz.helpers.*
 import com.ulan.munduz.manager.data.models.SliderImage
 import java.util.*
 import javax.inject.Inject
 
-class StorageImpl: Storage {
+class StorageImpl @Inject constructor(context: Context) : Storage {
 
-    private var mContext: Context
+    private var mContext: Context = context
     private val storage: FirebaseStorage = FirebaseStorage.getInstance()
     private val storageRef: StorageReference = storage.reference
     private var mSliderImage =  SliderImage()
 
-    @Inject
-    constructor(context: Context){
-        this.mContext = context
-    }
-
     override fun insertImage(filePath: Uri): Picture {
-        var picture = Picture()
+        val picture = Picture()
         val random = Random()
         val randomInt = random.nextInt(10000) + 1
         val storageRef: StorageReference = storageRef.child("images/$randomInt")
-        var uploadTask: UploadTask = storageRef.putFile(filePath)
+        val uploadTask: UploadTask = storageRef.putFile(filePath)
         uploadTask
             .continueWithTask { task ->
                 if (!task.isSuccessful) {
@@ -60,7 +55,7 @@ class StorageImpl: Storage {
         val random = Random()
         val randomInt = random.nextInt(1000) + 1
         val storageRef: StorageReference = storageRef.child("sliderImages/$randomInt")
-        var uploadTask: UploadTask = storageRef.putFile(filePath)
+        val uploadTask: UploadTask = storageRef.putFile(filePath)
         uploadTask
             .continueWithTask { task ->
                 if (!task.isSuccessful) {
@@ -102,5 +97,4 @@ class StorageImpl: Storage {
 
         })
     }
-    
 }

@@ -5,7 +5,6 @@ import com.ulan.munduz.manager.data.repository.Repository
 import com.ulan.munduz.manager.data.repository.RepositoryImpl
 import com.ulan.munduz.manager.data.repository.Storage
 import com.ulan.munduz.manager.data.repository.StorageImpl
-import com.ulan.munduz.manager.di.AppModule
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

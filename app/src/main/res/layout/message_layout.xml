@@ -1,66 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/white"
-              android:layout_margin="7dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="7dp"
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:maxLength="50"
-            android:layout_margin="8dp"
-            android:gravity="center_horizontal"
-            android:text="Письмо"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center_horizontal"
+        android:maxLength="50"
+        android:text="Письмо"
+        android:textSize="17sp" />
 
     <EditText
-            android:id="@+id/message_subject"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:inputType="textShortMessage"
-            android:maxLength="50"
-            android:layout_margin="8dp"
-            android:hint="Тема"/>
+        android:id="@+id/message_subject"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Тема"
+        android:inputType="textShortMessage"
+        android:maxLength="50"
+        android:textSize="16sp" />
 
     <EditText
-            android:id="@+id/message_body"
-            android:layout_width="270dp"
-            android:layout_height="140dp"
-            android:textSize="16sp"
-            android:inputType="textMultiLine"
-            android:maxLength="200"
-            android:layout_margin="8dp"
-            android:hint="Сообщение"/>
+        android:id="@+id/message_body"
+        android:layout_width="270dp"
+        android:layout_height="140dp"
+        android:layout_margin="8dp"
+        android:hint="Сообщение"
+        android:inputType="textMultiLine"
+        android:maxLength="200"
+        android:textSize="16sp" />
 
     <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <Button
-                android:id="@+id/cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Отмена"
-                android:textSize="14sp"
-                android:layout_margin="8dp"
-                android:layout_toLeftOf="@+id/send"
-                android:background="?android:selectableItemBackground"
-                android:textColor="@color/colorPrimaryDark"/>
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_toLeftOf="@+id/send"
+            android:background="?android:selectableItemBackground"
+            android:text="Отмена"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp" />
 
         <Button
-                android:id="@+id/send"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Отправить"
-                android:textSize="14sp"
-                android:layout_margin="8dp"
-                android:layout_alignParentRight="true"
-                android:background="?android:selectableItemBackground"
-                android:textColor="@color/colorPrimaryDark"/>
-
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="8dp"
+            android:background="?android:selectableItemBackground"
+            android:text="Отправить"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp" />
     </RelativeLayout>
-
 </LinearLayout>

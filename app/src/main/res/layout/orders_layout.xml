@@ -18,8 +18,7 @@
         app:contentInsetStart="0dp"
         app:contentInsetStartWithNavigation="0dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="@color/white"></androidx.appcompat.widget.Toolbar>
-
+        app:titleTextColor="@color/white"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/category_recycler_view"
@@ -33,6 +32,4 @@
         android:layout_height="wrap_content"
         android:indeterminate="true"
         android:visibility="gone"/>
-
-
 </LinearLayout>

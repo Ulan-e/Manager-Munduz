@@ -8,5 +8,4 @@ interface OrdersView {
     fun showProgress()
     fun hideProgress()
     fun showOrders(category: MutableList<Order>)
-
 }

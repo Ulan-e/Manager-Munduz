@@ -83,7 +83,5 @@
                 android:src="@drawable/ic_add_a_photo_gray_24dp" />
 
         </LinearLayout>
-
     </ScrollView>
-
 </LinearLayout>

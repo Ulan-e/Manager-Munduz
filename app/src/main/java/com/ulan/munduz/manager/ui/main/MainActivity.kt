@@ -16,6 +16,10 @@ class MainActivity: BaseActivity(), MainView {
 
     private lateinit var mPresenter: MainPresenter
 
+    companion object{
+        const val MANAGER = "Менеджер"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -44,7 +48,7 @@ class MainActivity: BaseActivity(), MainView {
 
     override fun initToolbar() {
         setSupportActionBar(main_toolbar)
-        supportActionBar?.title = "Менеджер"
+        supportActionBar?.title = MANAGER
         main_toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp)
         main_toolbar.setNavigationOnClickListener {
             finish()
@@ -69,7 +73,7 @@ class MainActivity: BaseActivity(), MainView {
     override fun showSendMessageFragment() {
         val ft = supportFragmentManager.beginTransaction()
         val messageFragment = SendMessageFragment()
-        messageFragment.show(ft, "dialog")
+        messageFragment.show(ft, "")
     }
 
     override fun showOrderActivity() {

@@ -8,5 +8,4 @@ interface AddSliderPresenter{
     fun setSliderImage(filePath: Uri?)
     fun insertToDatabase(name: String)
     fun detachView()
-
 }

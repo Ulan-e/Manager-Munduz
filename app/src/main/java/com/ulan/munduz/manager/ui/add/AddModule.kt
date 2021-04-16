@@ -13,5 +13,4 @@ abstract class AddModule {
     @AddScope
     @Binds
     abstract fun provideAddPresenter(presenter: AddPresenterImpl): AddPresenter
-
 }

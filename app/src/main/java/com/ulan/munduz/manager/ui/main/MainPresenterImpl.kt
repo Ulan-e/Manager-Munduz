@@ -2,14 +2,7 @@ package com.ulan.munduz.manager.ui.main
 
 import javax.inject.Inject
 
-class MainPresenterImpl: MainPresenter {
-
-    private var mView: MainView? = null
-
-    @Inject
-    constructor(mView: MainView?) {
-        this.mView = mView
-    }
+class MainPresenterImpl @Inject constructor(private var mView: MainView?) : MainPresenter {
 
     override fun detachView() {
         this.mView = null

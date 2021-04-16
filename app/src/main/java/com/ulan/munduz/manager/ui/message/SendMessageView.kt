@@ -1,6 +1,6 @@
 package com.ulan.munduz.manager.ui.message
 
-import com.ulan.app.munduz.data.models.Message
+import com.ulan.munduz.manager.data.models.Message
 
 interface SendMessageView {
 

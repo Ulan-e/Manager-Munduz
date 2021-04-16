@@ -8,9 +8,9 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.ArrayAdapter
 import com.squareup.picasso.Picasso
-import com.ulan.app.munduz.data.models.Picture
-import com.ulan.app.munduz.helpers.Constants.Companion.PICK_IMAGE_REQUEST
-import com.ulan.app.munduz.helpers.Constants.Companion.PRODUCTS_DATA
+import com.ulan.munduz.manager.data.models.Picture
+import com.ulan.munduz.manager.helpers.Constants.Companion.PICK_IMAGE_REQUEST
+import com.ulan.munduz.manager.helpers.Constants.Companion.PRODUCTS_DATA
 import com.ulan.app.munduz.helpers.showEditTextEmpty
 import com.ulan.app.munduz.helpers.showEmptyDrawable
 import com.ulan.app.munduz.helpers.showProductUpdated
@@ -39,9 +39,7 @@ class DetailsActivity : BaseActivity(), DetailsView {
         mPresenter.initCategory()
 
         mProduct = intent.getParcelableExtra(PRODUCTS_DATA)
-        if (mProduct != null) {
-            mPresenter.showProduct(mProduct)
-        }
+        mPresenter.showProduct(mProduct)
 
         update_product.setOnClickListener {
             mPresenter.updateButtonClicked()
@@ -60,7 +58,6 @@ class DetailsActivity : BaseActivity(), DetailsView {
         details_toolbar.setNavigationOnClickListener {
             finish()
         }
-
     }
 
     override fun setCategories(categories: MutableList<String>) {
@@ -87,7 +84,7 @@ class DetailsActivity : BaseActivity(), DetailsView {
     }
 
     override fun getInputProduct(): Product {
-        var product = Product()
+        val product = Product()
         product.id = mProduct.id
         product.date = System.currentTimeMillis()
         product.category = product_category.selectedItem.toString()
@@ -139,7 +136,6 @@ class DetailsActivity : BaseActivity(), DetailsView {
                 e.printStackTrace()
             }
         }
-
     }
 
     override fun onStop() {

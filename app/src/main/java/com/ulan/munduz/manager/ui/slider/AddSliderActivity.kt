@@ -6,14 +6,9 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.appcompat.app.AppCompatActivity
-import com.ulan.app.munduz.helpers.Constants
-import com.ulan.app.munduz.helpers.Constants.Companion.PICK_IMAGE_REQUEST
+import com.ulan.munduz.manager.helpers.Constants
+import com.ulan.munduz.manager.helpers.Constants.Companion.PICK_IMAGE_REQUEST
 import com.ulan.munduz.manager.R
-import com.ulan.munduz.manager.data.repository.Repository
-import com.ulan.munduz.manager.data.repository.RepositoryImpl
-import com.ulan.munduz.manager.data.repository.Storage
-import com.ulan.munduz.manager.data.repository.StorageImpl
 import com.ulan.munduz.manager.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.add_layout.*
 import kotlinx.android.synthetic.main.add_slider_layout.*

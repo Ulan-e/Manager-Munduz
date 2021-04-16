@@ -173,7 +173,6 @@
 
     </LinearLayout>
 
-
     <Button
         android:id="@+id/add_product"
         android:layout_width="match_parent"
@@ -182,6 +181,4 @@
         android:textSize="14sp"
         android:text="Добавить"
         android:layout_alignParentBottom="true"/>
-
-
 </RelativeLayout>

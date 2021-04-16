@@ -15,5 +15,4 @@ class MainApplication: DaggerApplication() {
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
         return DaggerMainComponent.builder().application(this).build()
     }
-
 }

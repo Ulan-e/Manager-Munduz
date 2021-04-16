@@ -18,8 +18,7 @@
         app:contentInsetStart="0dp"
         app:contentInsetStartWithNavigation="0dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="@color/white"></androidx.appcompat.widget.Toolbar>
-
+        app:titleTextColor="@color/white"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/products_recycler_view"
@@ -27,7 +26,6 @@
         android:layout_height="match_parent"
         android:visibility="gone">
     </androidx.recyclerview.widget.RecyclerView>
-
 
     <ProgressBar
         android:id="@+id/products_progress"
@@ -37,5 +35,4 @@
         android:layout_marginTop="200dp"
         android:layout_gravity="center"
         android:visibility="visible"/>
-
 </LinearLayout>

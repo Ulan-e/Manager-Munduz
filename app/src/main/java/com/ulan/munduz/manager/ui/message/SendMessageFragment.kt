@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
 import com.ulan.app.munduz.helpers.SendEmailHelper
-import com.ulan.app.munduz.helpers.convertLongToTime
+import com.ulan.munduz.manager.helpers.convertLongToTime
 import com.ulan.app.munduz.helpers.showEditTextEmpty
-import com.ulan.app.munduz.data.models.Message
+import com.ulan.munduz.manager.data.models.Message
 import com.ulan.munduz.manager.R
 import com.ulan.munduz.manager.ui.base.BaseDialogFragment
 import kotlinx.android.synthetic.main.message_layout.*

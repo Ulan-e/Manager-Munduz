@@ -20,5 +20,4 @@ interface MainComponent : AndroidInjector<MainApplication> {
         fun application(application: MainApplication): Builder
         fun build(): MainComponent
     }
-
 }

@@ -1,14 +1,12 @@
 package com.ulan.munduz.manager.data.repository
 
 import android.content.Context
-import android.util.Log
 import com.google.firebase.database.*
 import com.ulan.munduz.manager.R
-import com.ulan.app.munduz.helpers.Constants.Companion.ORDERS_DATA
+import com.ulan.munduz.manager.helpers.Constants.Companion.ORDERS_DATA
 import com.ulan.app.munduz.ui.Product
-import com.ulan.app.munduz.helpers.Constants.Companion.PRODUCTS_DATA
-import com.ulan.app.munduz.helpers.Constants.Companion.SLIDER_IMAGE_DATA
-import com.ulan.app.munduz.helpers.Constants.Companion.TAG
+import com.ulan.munduz.manager.helpers.Constants.Companion.PRODUCTS_DATA
+import com.ulan.munduz.manager.helpers.Constants.Companion.SLIDER_IMAGE_DATA
 import com.ulan.app.munduz.helpers.showErrorReadFromDatabase
 import com.ulan.munduz.manager.listeners.OrdersListCallback
 import com.ulan.munduz.manager.listeners.ProductsListCallback
@@ -16,25 +14,18 @@ import com.ulan.munduz.manager.data.models.Order
 import com.ulan.munduz.manager.data.models.SliderImage
 import javax.inject.Inject
 
-class RepositoryImpl : Repository {
+class RepositoryImpl @Inject constructor(private val context: Context) : Repository {
 
     private val database: FirebaseDatabase
     private val ref: DatabaseReference
-    private val context: Context
 
-    @Inject
-    constructor(context: Context) {
-        this.context = context
+    init {
         database = FirebaseDatabase.getInstance()
-        ref = database.getReference()
+        ref = database.reference
     }
 
     override fun insertProduct(product: Product) {
-        val key = ref.push().key
-        if (key == null) {
-            Log.d(TAG, "Couldn't get push key for products")
-            return
-        }
+        val key = ref.push().key ?: return
         product.id = key
         ref.child(PRODUCTS_DATA).child(key).setValue(product)
     }
@@ -79,7 +70,7 @@ class RepositoryImpl : Repository {
             }
 
             override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                TODO()
             }
         })
     }

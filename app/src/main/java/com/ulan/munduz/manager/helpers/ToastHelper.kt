@@ -19,7 +19,7 @@ fun showEditTextEmpty(context: Context) {
 fun showEmptyFields(context: Context){
     Toast.makeText(
         context,
-        "Заполните все поля",
+        context.resources.getString(R.string.edit_text_empty),
         Toast.LENGTH_LONG
     ).show()
 }
@@ -27,7 +27,7 @@ fun showEmptyFields(context: Context){
 fun showSuccessProductAdded(context: Context){
     Toast.makeText(
         context,
-        "Добавлено",
+        context.resources.getString(R.string.added),
         Toast.LENGTH_LONG
     ).show()
 }
@@ -35,7 +35,7 @@ fun showSuccessProductAdded(context: Context){
 fun showSuccessDeleted(context: Context){
     Toast.makeText(
         context,
-        "Успешно удален",
+        context.resources.getString(R.string.success_removed),
         Toast.LENGTH_LONG
     ).show()
 }
@@ -43,7 +43,7 @@ fun showSuccessDeleted(context: Context){
 fun showEmptyDrawable(context: Context) {
     Toast.makeText(
         context,
-        context.resources.getString(R.string.product_image) + " не выбрана ",
+        context.resources.getString(R.string.product_image) + context.resources.getString(R.string.not_selected),
         Toast.LENGTH_SHORT
     ).show()
 }
@@ -83,7 +83,7 @@ fun showErrorReadFromDatabase(context: Context){
 fun showProductUpdated(context: Context){
     Toast.makeText(
         context,
-        "Обновлено",
+        context.resources.getString(R.string.updated),
         Toast.LENGTH_LONG
     ).show()
 }
@@ -91,7 +91,7 @@ fun showProductUpdated(context: Context){
 fun showImageRemoved(context: Context){
     Toast.makeText(
         context,
-        "Picture remove",
+        context.resources.getString(R.string.remove_image),
         Toast.LENGTH_LONG
     ).show()
 }
@@ -99,7 +99,7 @@ fun showImageRemoved(context: Context){
 fun showImageRemovedFailure(context: Context){
     Toast.makeText(
         context,
-        "Fail while removing image",
+        context.resources.getString(R.string.fail_remove_image),
         Toast.LENGTH_LONG
     ).show()
 }
@@ -107,7 +107,7 @@ fun showImageRemovedFailure(context: Context){
 fun showSuccessMessageSent(context: Context){
     Toast.makeText(
         context,
-        "Your message sent to developer",
+        context.resources.getString(R.string.success_sent_message_to_developer),
         Toast.LENGTH_LONG
     ).show()
 }

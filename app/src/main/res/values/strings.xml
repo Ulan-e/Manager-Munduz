@@ -32,6 +32,15 @@
     <string name="remove_product">Удалить товар</string>
     <string name="recommend">Рекомендуем</string>
 
+    <string name="added">Добавлено</string>
+    <string name="success_removed">Успешно удален</string>
+    <string name="not_selected">Не выбрано</string>
+    <string name="updated">Обновлено</string>
+    <string name="remove_image">Удалить изображение</string>
+    <string name="fail_remove_image">Ошибка при удалении изображения</string>
+    <string name="success_sent_message_to_developer">Ваше сообщение отправлено</string>
+    <string name="about_product">О Продукте</string>
+
     <array name="category">
         <item>Продукты</item>
         <item>Напитки</item>

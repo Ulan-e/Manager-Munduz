@@ -38,5 +38,4 @@
                 android:gravity="right"
                 android:textStyle="italic"/>
     </RelativeLayout>
-
 </LinearLayout>

@@ -1,12 +1,8 @@
 package com.ulan.munduz.manager.ui.message
 
-class SendMessagePresenterImpl: SendMessagePresenter {
+class SendMessagePresenterImpl(view: SendMessageView) : SendMessagePresenter {
 
-    private var mView: SendMessageView?
-
-    constructor(view: SendMessageView) {
-        this.mView = view
-    }
+    private var mView: SendMessageView? = view
 
     override fun detachView() {
         mView = null
@@ -23,5 +19,4 @@ class SendMessagePresenterImpl: SendMessagePresenter {
     override fun cancelButtonClicked() {
         mView?.cancelDialog()
     }
-
 }

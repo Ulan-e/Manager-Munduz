@@ -8,7 +8,7 @@ import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ulan.app.munduz.helpers.Constants.Companion.PRODUCTS_DATA
+import com.ulan.munduz.manager.helpers.Constants.Companion.PRODUCTS_DATA
 import com.ulan.app.munduz.helpers.showEmptyFields
 import com.ulan.app.munduz.ui.Product
 import com.ulan.munduz.manager.R
@@ -20,9 +20,12 @@ import kotlinx.android.synthetic.main.products_activity.*
 import javax.inject.Inject
 
 class ProductsActivity : BaseActivity(),
-    OnItemClickListener, SearchView.OnQueryTextListener, MenuItem.OnActionExpandListener,
+    OnItemClickListener,
+    SearchView.OnQueryTextListener,
+    MenuItem.OnActionExpandListener,
     ProductsView {
-    private lateinit var searchView : SearchView
+
+    private lateinit var searchView: SearchView
 
     @Inject
     lateinit var mPresenter: ProductsPresenter
@@ -50,7 +53,12 @@ class ProductsActivity : BaseActivity(),
     override fun showProducts(products: ArrayList<Product>) {
         val layoutManager = LinearLayoutManager(this)
         products_recycler_view.layoutManager = layoutManager
-        products_recycler_view.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        products_recycler_view.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                DividerItemDecoration.VERTICAL
+            )
+        )
         mAdapter.setProducts(products)
         products_recycler_view.adapter = mAdapter
     }

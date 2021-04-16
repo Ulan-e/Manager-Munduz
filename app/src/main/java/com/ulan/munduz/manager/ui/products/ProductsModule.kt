@@ -30,6 +30,4 @@ abstract class ProductsModule {
             return ProductsAdapter(activity, listener)
         }
     }
-
-
 }

@@ -26,5 +26,4 @@ class MessageModule{
     fun provideSendEmail(context: Context): SendEmailHelper {
         return SendEmailHelper(context)
     }
-
 }

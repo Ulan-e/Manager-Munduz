@@ -13,5 +13,4 @@ abstract class MainModule{
     @MainScope
     @Binds
     abstract fun providePresenter(presenter: MainPresenterImpl): MainPresenter
-
 }

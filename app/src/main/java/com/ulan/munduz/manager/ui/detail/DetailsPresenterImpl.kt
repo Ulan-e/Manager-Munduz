@@ -1,25 +1,25 @@
 package com.ulan.munduz.manager.ui.detail
 
 import android.net.Uri
-import android.util.Log
 import com.ulan.app.munduz.ui.Product
-import com.ulan.app.munduz.data.models.Picture
+import com.ulan.munduz.manager.data.models.Picture
 import com.ulan.munduz.manager.data.repository.Repository
 import com.ulan.munduz.manager.data.repository.Storage
 import javax.inject.Inject
 
-class DetailsPresenterImpl : DetailsPresenter{
+class DetailsPresenterImpl @Inject constructor(
+    view: DetailsView,
+    repository: Repository,
+    storage: Storage
+) : DetailsPresenter{
 
-    private var mView: DetailsView? = null
-    private var mRepository: Repository
-    private var mStorage: Storage
-
-    @Inject
-    constructor(view: DetailsView, repository: Repository, storage: Storage) {
-        this.mView = view
-        this.mRepository = repository
-        this.mStorage = storage
+    companion object{
+        const val ABOUT_PRODUCT = "О Продукте"
     }
+
+    private var mView: DetailsView? = view
+    private var mRepository: Repository = repository
+    private var mStorage: Storage = storage
 
     override fun initCategory() {
         val categories = mRepository.getCategories()
@@ -38,13 +38,12 @@ class DetailsPresenterImpl : DetailsPresenter{
     }
 
     override fun setToolbar() {
-        mView?.initToolbar("О Продукте")
+        mView?.initToolbar(ABOUT_PRODUCT)
     }
 
     override fun showProduct(product: Product) {
         mView?.setProduct(product)
     }
-
 
     override fun getPictureUrl(filePath: Uri?): Picture {
         return mStorage.insertImage(filePath!!)

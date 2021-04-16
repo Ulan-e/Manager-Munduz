@@ -6,18 +6,13 @@ import com.ulan.munduz.manager.data.repository.Repository
 import com.ulan.munduz.manager.data.repository.Storage
 import javax.inject.Inject
 
-class AddSliderPresenterImpl : AddSliderPresenter{
-
-    private var mView: AddSliderView?
+class AddSliderPresenterImpl @Inject constructor(
+    mView: AddSliderView,
+    private var mRepository: Repository,
     private var mStorage: Storage
-    private var mRepository: Repository
+) : AddSliderPresenter{
 
-    @Inject
-    constructor(mView: AddSliderView, mRepository: Repository, mStorage: Storage) {
-        this.mView = mView
-        this.mRepository = mRepository
-        this.mStorage = mStorage
-    }
+    private var mView: AddSliderView? = mView
 
     override fun setToolbar() {
         mView?.showToolbar()
@@ -38,5 +33,4 @@ class AddSliderPresenterImpl : AddSliderPresenter{
     override fun detachView() {
         mView = null
     }
-
 }

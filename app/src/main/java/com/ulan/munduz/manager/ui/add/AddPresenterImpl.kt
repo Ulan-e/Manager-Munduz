@@ -2,25 +2,22 @@ package com.ulan.munduz.manager.ui.add
 
 import android.net.Uri
 import com.ulan.app.munduz.ui.Product
-import com.ulan.app.munduz.data.models.Picture
+import com.ulan.munduz.manager.data.models.Picture
 import com.ulan.munduz.manager.data.repository.Repository
 import com.ulan.munduz.manager.data.repository.Storage
 import javax.inject.Inject
 
-class AddPresenterImpl : AddPresenter {
+class AddPresenterImpl @Inject constructor(
+    view: AddView,
+    repository: Repository,
+    storage: Storage
+) : AddPresenter {
 
-    private var mView: AddView? = null
-    private var mRepository: Repository
-    private var mStorage: Storage
+    private var mView: AddView? = view
+    private var mRepository: Repository = repository
+    private var mStorage: Storage = storage
     private lateinit var mProduct: Product
     private lateinit var mPicture: Picture
-
-    @Inject
-    constructor(view: AddView, repository: Repository, storage: Storage) {
-        this.mView = view
-        this.mRepository = repository
-        this.mStorage = storage
-    }
 
     override fun setToolbar() {
         mView!!.initToolbar("Добавить")
@@ -55,5 +52,4 @@ class AddPresenterImpl : AddPresenter {
     override fun detachView() {
         this.mView = null
     }
-
 }

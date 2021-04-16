@@ -22,8 +22,7 @@
             app:contentInsetStart="0dp"
             app:contentInsetStartWithNavigation="0dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:titleTextColor="@color/white"></androidx.appcompat.widget.Toolbar>
-
+            app:titleTextColor="@color/white"/>
 
         <!-- Category of product -->
         <TextView
@@ -42,7 +41,6 @@
             android:layout_marginRight="7dp"
             android:layout_marginBottom="4dp"
             android:textSize="16sp" />
-
 
         <!-- Name of product -->
         <TextView
@@ -63,7 +61,6 @@
             android:maxLength="40"
             android:textSize="16sp" />
 
-
         <!-- Description of product -->
         <TextView
             android:layout_width="match_parent"
@@ -80,7 +77,6 @@
             android:layout_marginBottom="4dp"
             android:inputType="textMultiLine"
             android:textSize="16sp" />
-
 
         <!-- Cost of product -->
         <TextView
@@ -100,7 +96,6 @@
             android:inputType="numberDecimal"
             android:maxLength="7"
             android:textSize="16sp" />
-
 
         <!-- Visibility of product -->
         <Switch
@@ -145,7 +140,6 @@
 
         </RelativeLayout>
 
-
         <!-- Image of product-->
         <TextView
             android:layout_width="match_parent"
@@ -176,7 +170,6 @@
                 android:background="@color/white"
                 android:clickable="true" />
         </LinearLayout>
-
     </LinearLayout>
 
     <!-- Button -->

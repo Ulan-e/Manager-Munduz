@@ -9,9 +9,9 @@ import com.ulan.munduz.manager.listeners.OnItemClickListener
 
 class ProductsHolder(itemView: View)  : RecyclerView.ViewHolder(itemView) {
 
-    val item_name = itemView.findViewById<TextView>(R.id.item_name)
-    val item_category = itemView.findViewById<TextView>(R.id.item_category)
-    val item_cost = itemView.findViewById<TextView>(R.id.item_cost)
+    val itemName: TextView = itemView.findViewById(R.id.item_name)
+    val itemCategory: TextView = itemView.findViewById(R.id.item_category)
+    val itemCost: TextView = itemView.findViewById(R.id.item_cost)
 
     fun bind(product: Product?, onItemClickListener: OnItemClickListener?){
         itemView.setOnClickListener{

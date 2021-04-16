@@ -1,4 +1,4 @@
-package com.ulan.app.munduz.helpers
+package com.ulan.munduz.manager.helpers
 
 class Constants {
 

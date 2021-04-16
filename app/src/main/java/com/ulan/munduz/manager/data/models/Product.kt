@@ -3,7 +3,7 @@ package com.ulan.app.munduz.ui
 import android.os.Build
 import android.os.Parcelable
 import androidx.annotation.RequiresApi
-import com.ulan.app.munduz.data.models.Picture
+import com.ulan.munduz.manager.data.models.Picture
 import kotlinx.android.parcel.Parcelize
 import java.util.*
 
@@ -40,8 +40,3 @@ data class Product(
         return Objects.hash(this.id)
     }
 }
-
-
-
-
-

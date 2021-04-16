@@ -12,5 +12,4 @@ abstract class FragmentBuilderModule {
     @MainScope
     @ContributesAndroidInjector(modules = [MessageModule::class])
     abstract fun messageFragment(): SendMessageFragment
-
 }

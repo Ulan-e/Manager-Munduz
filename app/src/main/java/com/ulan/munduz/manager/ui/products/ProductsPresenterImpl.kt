@@ -5,17 +5,11 @@ import com.ulan.munduz.manager.listeners.ProductsListCallback
 import com.ulan.munduz.manager.data.repository.Repository
 import javax.inject.Inject
 
-class ProductsPresenterImpl :
+class ProductsPresenterImpl @Inject constructor(view: ProductsView, repository: Repository) :
     ProductsPresenter {
 
-    private var mView: ProductsView? = null
-    private var mRepository: Repository
-
-    @Inject
-    constructor(view: ProductsView, repository: Repository){
-        this.mView = view
-        this.mRepository = repository
-    }
+    private var mView: ProductsView? = view
+    private var mRepository: Repository = repository
 
     override fun loadProducts(){
         mRepository.getProducts(object :

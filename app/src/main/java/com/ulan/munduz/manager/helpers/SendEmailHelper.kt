@@ -2,6 +2,7 @@ package com.ulan.app.munduz.helpers
 
 import android.content.Context
 import android.os.AsyncTask
+import com.ulan.munduz.manager.data.models.Message
 import java.util.*
 import javax.mail.*
 import javax.mail.internet.InternetAddress
@@ -21,7 +22,7 @@ class SendEmailHelper : AsyncTask<Void, Void, Void>{
         this.context = context
     }
 
-    fun setMessage(message: com.ulan.app.munduz.data.models.Message){
+    fun setMessage(message: Message){
         this.email = message.email
         this.subject = message.subject
         this.message = message.body

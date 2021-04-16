@@ -4,4 +4,5 @@ data class Order(
     var id : String = "",
     var body: String = "",
     var phoneNumber: Int = -1,
-    var time: Long = 0L)
+    var time: Long = 0L
+)

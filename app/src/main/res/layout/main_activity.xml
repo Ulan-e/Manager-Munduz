@@ -20,7 +20,7 @@
         app:contentInsetStartWithNavigation="0dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:title="Менеджер"
-        app:titleTextColor="@color/white"></androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="@color/white"/>
 
 
     <Button
@@ -49,8 +49,7 @@
         android:layout_margin="12dp"
         android:background="?android:selectableItemBackground"
         android:text="Управление товарами"
-        android:textSize="14sp"
-        />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/call_orders_products"
@@ -70,5 +69,4 @@
         android:background="?android:selectableItemBackground"
         android:text="Написать разработчику"
         android:textSize="14sp" />
-
 </LinearLayout>
